@@ -33,11 +33,11 @@ cd sveltekit-blog-app
 npm install
 ```
 
-2. Initialize the database and run the migration script
+2. Initialize files for connecting to database
 
 ```
 edgedb project init
-npm run migrate
+npx @edgedb/generate edgeql-js
 ```
 
 3. Run the dev server
