@@ -2,9 +2,10 @@
   import SvgIcon from "$lib/SvgIcons.svelte"
   import Sections from "./SidebarSections.svelte"
   import ProfileSection from "./SidebarProfileSection.svelte"
-
+  import DemoModeHeader from "$lib/demo-mode-header.svelte";
   let isMobileMenuOpen = false
 </script>
+
 
 <div>
   <!-- Off-canvas menu for mobile -->
@@ -72,6 +73,7 @@
       </button>
     </div>
     <div class="m-4">
+      <DemoModeHeader admin={true} />
       <slot />
     </div>
   </div>

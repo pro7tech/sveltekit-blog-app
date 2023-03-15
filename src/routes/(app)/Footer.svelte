@@ -1,3 +1,6 @@
+<script>
+  import { RepoLink } from "$lib/config.js"
+</script>
 <footer class="bg-sky-400">
   <div
     class="mx-auto max-w-7xl py-8 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
@@ -49,7 +52,7 @@
         </svg>
       </a>
 
-      <a href="#" class="text-white hover:text-gray-200">
+      <a href={RepoLink} class="text-white hover:text-gray-200">
         <span class="sr-only">GitHub</span>
         <svg
           class="h-6 w-6"

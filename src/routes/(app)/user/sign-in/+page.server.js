@@ -1,5 +1,6 @@
 import { fail, redirect } from "@sveltejs/kit"
 import { User } from "$lib/server/database.js"
+import { IsReadonlyMode } from "$lib/config.js"
 import bcrypt from "bcrypt"
 
 export const load = async ({ locals }) => {
@@ -28,6 +29,8 @@ export const actions = {
     let user = await User.select({
       id: true,
       password_hash: true,
+      role: true,
+      user_auth_token: true,
       filter_single: { email: email },
     })
 
@@ -41,11 +44,16 @@ export const actions = {
       return fail(400, credential_error)
     }
 
-    let uuid = crypto.randomUUID()
-    await User.update((u) => ({
-      filter_single: { id: user.id },
-      set: { user_auth_token: uuid },
-    }))
+    let uuid
+    if (IsReadonlyMode()) {
+      uuid = user.user_auth_token
+    } else {
+      uuid = crypto.randomUUID()
+      await User.update((u) => ({
+        filter_single: { id: user.id },
+        set: { user_auth_token: uuid },
+      }))
+    }
 
     cookies.set("session", uuid, {
       path: "/",
@@ -55,6 +63,10 @@ export const actions = {
       // set cookie to expire after a month
       maxAge: 60 * 60 * 24 * 30,
     })
+
+    if (user.role === "admin") {
+      throw redirect(307, "/admin")
+    }
 
     throw redirect(307, "/")
   },

@@ -4,13 +4,14 @@ import bcrypt from "bcrypt"
 export async function seed() {
   console.log("Seeding database...")
 
+  // uncomment to clear database
   // await Comment.delete({})
   // await Post.delete({})
   // await User.delete({})
   // await Tag.delete({})
 
   let addTag = async (name) => {
-    let result = await Tag.insert({ name: name })
+    let result = await Tag.insert_in_readonly_mode({ name: name })
     console.log("Added tag: " + name, result.id)
     return result.id
   }
@@ -27,13 +28,14 @@ export async function seed() {
     }
 
     user.avatar_src = "/images/avatars/" + user.username + ".jpeg"
+    user.user_auth_token = crypto.randomUUID() // these hashes used for read-only mode
 
     if (!user.email) {
       user.email = user.username + "@example.com"
     }
 
     user.password_hash = password_hash
-    let result = await User.insert(user)
+    let result = await User.insert_in_readonly_mode(user)
     console.log("Added user: " + user.username, result.id)
     return result.id
   }
@@ -84,7 +86,7 @@ export async function seed() {
   })
 
   let addPost = async (post) => {
-    let result = await Post.insert({
+    let result = await Post.insert_in_readonly_mode({
       title: post.title,
       slug: post.slug,
       content: post.content,
@@ -136,7 +138,7 @@ export async function seed() {
   })
 
   let addComment = async (comment) => {
-    let result = await Comment.insert({
+    let result = await Comment.insert_in_readonly_mode({
       content: comment.content,
       author: User.select_query({
         filter_single: { id: comment.author },

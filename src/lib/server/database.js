@@ -1,6 +1,7 @@
 // @ts-nocheck
 import * as edgedb from "edgedb"
 import e from "../../../dbschema/edgeql-js/index.mjs"
+import { IsReadonlyMode } from "$lib/config.js"
 export { e }
 
 export let client = edgedb.createClient()
@@ -20,14 +21,27 @@ class Database {
     }))
   }
   static async insert(params) {
+    if (IsReadonlyMode()) {
+      return {}
+    }
+    const query = e.insert(this.type, params)
+    return await query.run(client)
+  }
+  static async insert_in_readonly_mode(params) {
     const query = e.insert(this.type, params)
     return await query.run(client)
   }
   static async update(params) {
+    if (IsReadonlyMode()) {
+      return {}
+    }
     const query = e.update(this.type, params)
     return await query.run(client)
   }
   static async delete(params) {
+    if (IsReadonlyMode()) {
+      return {}
+    }
     const query = e.delete(this.type, params)
     return await query.run(client)
   }

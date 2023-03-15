@@ -15,10 +15,10 @@
 
   let signedIn = $page.data.user ? true : false
   let commentBackground = signedIn ? "bg-white " : "bg-gray-50 "
-  let commentCLasses =
+  let commentClasses =
     commentBackground + "px-0 w-full text-sm text-gray-900 border-0 "
   if (signedIn) {
-    commentCLasses += "focus:ring-0"
+    commentClasses += "focus:ring-0"
   }
 </script>
 
@@ -141,7 +141,7 @@
               <textarea
                 name="comment"
                 rows="6"
-                class={commentCLasses}
+                class={commentClasses}
                 placeholder="Write a comment..."
                 required
               />

@@ -1,5 +1,5 @@
 //import type { Handle } from '@sveltejs/kit'
-import { User, e } from "$lib/server/database.js"
+import { User } from "$lib/server/database.js"
 
 let signinRedirect = () => {
   const response = new Response(null, {

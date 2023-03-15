@@ -1,7 +1,10 @@
 <script>
   import { page } from "$app/stores"
   import { t } from "$lib/tailwind.js"
+  import DemoModeHeader from "$lib/demo-mode-header.svelte"
 </script>
+
+<DemoModeHeader />
 
 <header class="bg-sky-400">
   <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
