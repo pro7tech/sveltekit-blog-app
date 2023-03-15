@@ -12,7 +12,7 @@
       class="flex w-full items-center justify-between border-b border-sky-500 py-6 lg:border-none"
     >
       <div class="flex items-center">
-        <a href="/">
+        <a href="/" aria-label="Goto home page">
           <img class="h-10 w-auto" src="/logo.svg" alt="" />
         </a>
         <div class="ml-10 hidden space-x-8 lg:block">

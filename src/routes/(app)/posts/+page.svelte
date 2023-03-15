@@ -7,6 +7,10 @@
   let unselected = "bg-sky-200 text-sky-900"
 </script>
 
+<svelte:head>
+  <meta name="description" content="Explore the Fullstack Blog App and learn about topics such as EdgeDB, SvelteKit, and Tailwind.">
+</svelte:head>
+
 <div
   class="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
 >
