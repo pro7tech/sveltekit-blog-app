@@ -8,4 +8,4 @@ node_modules
 .vercel
 .output
 
-dbschema/edgeql-js
+#dbschema/edgeql-js #see if need generated code for vercel build
