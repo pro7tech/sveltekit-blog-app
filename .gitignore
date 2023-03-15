@@ -8,5 +8,5 @@ node_modules
 .vercel
 .output 
 
-dbschema/edgeql-js  
+# dbschema/edgeql-js  # todo: once generated files used for vercel deployment, don't check these in
 
