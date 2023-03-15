@@ -4,15 +4,12 @@ const isProduction = import.meta.env.PROD;
 
 export const IsReadonlyMode = () => {
   if(PUBLIC_READONLY_MODE === "enabled") {
-    console.log("Readonly mode is enabled")
     return true
   }
   if(PUBLIC_READONLY_MODE === "disabled") {
-    console.log("Readonly mode is disabled")
     return false
   }
   if(PUBLIC_READONLY_MODE === "production") {
-    console.log("Readonly mode is production")
     return isProduction 
   }
 
