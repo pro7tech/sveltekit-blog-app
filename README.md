@@ -37,12 +37,19 @@ Only users with role of ‘admin’ can access these pages.  CRUD pages for user
 
 ### EdgeDb UI 
 
-Run command 'edgedb ui' to see the database explorer and query interfacce
+Run command 'edgedb ui' in root folder to see the database explorer and query REPL
+![Screenshot 2023-03-15 at 9 54 05 PM](https://user-images.githubusercontent.com/29139306/225521291-ab5f18b8-ea6f-4686-b27d-f6f0dace7b99.png)
+![Screenshot 2023-03-15 at 9 54 45 PM](https://user-images.githubusercontent.com/29139306/225521308-a3671129-64a6-4551-8220-1c375bddbf45.png)
+
 
 ### Performance
 100% Performance on Google Lighthouse
+![Screenshot 2023-03-15 at 4 26 31 PM](https://user-images.githubusercontent.com/29139306/225521173-0e4c09fb-61b4-4928-a0ae-1840642b78fe.png)
 
-### Hover UI to see source code location
+### Code Show Feature
+Use Keyboard shortcut (Command ⌘ + Shift ⇧) on Mac to activate a hover component that shows the code generating the UI under the mouse cursor
+![Screenshot 2023-03-15 at 10 05 34 PM](https://user-images.githubusercontent.com/29139306/225521088-694050c9-f6ce-4e37-8950-b41d4cce9e25.png)
+
 
 ## Installation:
 EdgeDb is a prerequisite: https://www.edgedb.com/install
