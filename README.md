@@ -91,7 +91,7 @@ You can then login to the admin pages with:
 $ edgedb migrate --dsn edgedb://username:password@hostname:port --tls-security insecure
 ```
 
-4. Deploy this app to Vercel with the button below.
+4. Deploy this app to Vercel with the link below.
 
 https://vercel.com/new/git/external?repository-url=https://github.com/pro7tech/sveltekit-blog-app&repository-name=sveltekit-blog-app&env=EDGEDB_DSN,EDGEDB_CLIENT_TLS_SECURITY
 
