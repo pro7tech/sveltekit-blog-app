@@ -8,7 +8,7 @@ This app demos the same features of “querying & persisting data to a database,
 
 - **SvelteKit:** A top framework for developer retention in the 2021 and 2022 State of JS Survey ([Source](https://2022.stateofjs.com/en-US/libraries/rendering-frameworks/))
 - **Tailwind:** Consistently the most popular CSS Framework in the annual State of CSS Survey ([Source](https://2022.stateofcss.com/en-US/css-frameworks/))
-- **EdgeDb:** Open Source Database with 10 Years of Development providing the best of both worlds between SQL and an ORM ([Source](https://www.edgedb.com/blog/a-solution-to-the-sql-vs-orm-dilemma))
+- **EdgeDB:** Open Source Database with 10 Years of Development providing the best of both worlds between SQL and an ORM ([Source](https://www.edgedb.com/blog/a-solution-to-the-sql-vs-orm-dilemma))
 
 ## Features
 - **Simplicity:** Minimizes 3rd party dependencies in favor of using the platform to keep things simple
@@ -16,7 +16,7 @@ This app demos the same features of “querying & persisting data to a database,
 - **Desktop and Mobile-friendly:** Looks great on both large-screen and small-screen (mobile) devices.
 - **Authentication and Authorization:** Built-in users management with role based authorization 
 - **100% Performance Score** on Google Lighthouse
-- **Modern Admin Panel:** Elegant admin panel demoing CRUD operations for Posts, Comments, Tags, and Users
+- **Modern Admin Panel:** Elegant admin dashboard demoing CRUD operations for Posts, Comments, Tags, and Users
 
 ## Screenshots
 
