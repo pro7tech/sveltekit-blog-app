@@ -47,11 +47,12 @@ Run command 'edgedb ui' in root folder to see the database explorer and query RE
 ![Screenshot 2023-03-15 at 4 26 31 PM](https://user-images.githubusercontent.com/29139306/225521173-0e4c09fb-61b4-4928-a0ae-1840642b78fe.png)
 
 ### Code Show Feature
-Use Keyboard shortcut (Command ⌘ + Shift ⇧) on Mac to activate a hover component that shows the code generating the UI under the mouse cursor
+Use Keyboard shortcut for your platform (Command ⌘ + Shift ⇧ on Mac) to activate a hover component that shows the code generating the UI under the mouse cursor
 ![Screenshot 2023-03-15 at 10 05 34 PM](https://user-images.githubusercontent.com/29139306/225521088-694050c9-f6ce-4e37-8950-b41d4cce9e25.png)
-
+![ezgif-1-c611e45007](https://user-images.githubusercontent.com/29139306/226241441-e2534ddf-6da6-414d-a2cc-ff8d6ba2d441.gif)
 
 ## Installation:
+
 EdgeDb is a prerequisite: https://www.edgedb.com/install
 
 1. Clone the repository and install dependencies:
