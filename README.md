@@ -23,6 +23,7 @@ EdgeDb is a prerequisite: https://www.edgedb.com/install
 Make sure your database is clear from any previous installs:
 
     edgedb project unlink -D
+
       Do you really want to unlink and
       delete instance sveltekit_blog_app?
       (type `Yes`)
