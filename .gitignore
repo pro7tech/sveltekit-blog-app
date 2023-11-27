@@ -6,7 +6,6 @@ node_modules
 .env.*
 !.env.example
 .vercel
-.output 
+.output
 
-# dbschema/edgeql-js  # todo: once generated files used for vercel deployment, don't check these in
-
+dbschema/edgeql-js
