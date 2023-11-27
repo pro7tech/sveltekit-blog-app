@@ -1,5 +1,5 @@
 import { User, Post, Comment, Tag } from "$lib/server/database.js"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 export async function seed() {
   console.log("Seeding database...")

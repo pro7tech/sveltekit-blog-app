@@ -1,6 +1,6 @@
 import { fail, redirect } from "@sveltejs/kit"
 import { User } from "$lib/server/database.js"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 export const load = async ({ locals }) => {
   if (!locals.user) {
