@@ -1,4 +1,5 @@
 import { Comment, User, Post } from "$lib/server/database.js"
+import { getBody } from "$lib/server/request"
 
 export function load() {
   return {
@@ -67,11 +68,16 @@ export const actions = {
     }
   },
   delete: async ({ request }) => {
-    const data = await request.formData()
+    const data = await getBody(request)
+    const id = data.get("id")
+    console.info('comments (delete):', {id, data, bodyUsed: request.bodyUsed});
+    let result
     try {
-      await Comment.delete({ filter_single: { id: data.get("id") } })
+      result = await Comment.delete({ filter_single: { id } })
     } catch (error) {
+      // @ts-ignore
       return { error: error.message }
     }
+    console.info('delete', {result})
   },
 }

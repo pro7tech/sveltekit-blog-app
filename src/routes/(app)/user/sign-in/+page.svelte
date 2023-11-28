@@ -29,7 +29,7 @@
         <FormMessage {form} />
       </div>
 
-      <form use:enhance class="space-y-6 mt-4" action="#" method="POST">
+      <form use:enhance class="space-y-6 mt-4" action="#" method="POST" enctype="application/x-www-form-urlencoded">
         <div>
           <label for="password" class={t.label}>Email</label>
           <div class="mt-1">

@@ -1,7 +1,9 @@
-import { fail, redirect } from "@sveltejs/kit"
-import { User } from "$lib/server/database.js"
-import { IsReadonlyMode } from "$lib/config.js"
 import bcrypt from "bcryptjs"
+import { fail, redirect } from "@sveltejs/kit"
+
+import { IsReadonlyMode } from "$lib/config.js"
+import { getBody } from "$lib/server/request.js"
+import { User } from "$lib/server/database.js"
 
 export const load = async ({ locals }) => {
   // redirect user if logged in
@@ -13,7 +15,8 @@ export const load = async ({ locals }) => {
 /** @type {import('./$types').Actions} */
 export const actions = {
   default: async ({ request, cookies }) => {
-    const data = await request.formData()
+    const data = await getBody(request)
+    console.debug('Got Body', {data})
     const email = data.get("email")
     const password = data.get("password")
 

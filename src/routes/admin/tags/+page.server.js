@@ -1,4 +1,5 @@
 import { Tag } from "$lib/server/database.js"
+import { getBody } from "$lib/server/request"
 
 export function load({ cookies }) {
   return {
@@ -39,11 +40,16 @@ export const actions = {
     }
   },
   delete: async ({ request }) => {
-    const data = await request.formData()
+    const data = await getBody(request)
+    const id = data.get("id")
+    console.info('tags (delete):', {id, data, bodyUsed: request.bodyUsed});
+    let result
     try {
-      await Tag.delete({ filter_single: { id: data.get("id") } })
+      result = await Tag.delete({ filter_single: { id } })
     } catch (error) {
+      // @ts-ignore
       return { error: error.message }
     }
+    console.info('delete', {result})
   },
 }
